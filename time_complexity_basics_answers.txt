@@ -70,7 +70,7 @@ FUNCTION fibonacci(number)
  END IF
 END FUNCTION
 
-The time complexity of this function is 0(n^2).
+The time complexity of this function is 0(n).
 
 
 9. Out of the code snippets you just saw, which is the most time efficient?
