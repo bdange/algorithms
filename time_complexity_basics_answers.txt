@@ -1,0 +1,78 @@
+1. What is time complexity and what is its relation to algorithms?
+
+The time complexity can be described as the time it takes for a program to execute. In an algorithm, this time taken will be affected by the number and complexity of operations it takes. 
+
+
+2. What is runtime?
+
+Runtime is equivalent to time complexity and can also refer to the 'physical time' duration of an algorithm. 
+
+
+3. How is the runtime of an algorithm calculated?
+
+It is calculated by analysing each statement of that algorithm / function. 
+
+
+4. Name the six types of algorithm growth rates we saw in this checkpoint and list them in order of most efficient to least efficient. Now Google another algorithmic growth rate not covered and place it in the correct spot in your list.
+
+- Logarithmic algorithm
+- Log-linear algorithm
+- Quadratic growth rate
+- Linear algorithm
+- Constant algorithm
+- Exponential algorithm
+- Factorial algorithm
+
+
+5. Choose one of the algorithmic growth rates from the last question and make a comparison to a real-life situation.
+
+The Fibonacci sequence could be compared to a quadratic growth rate. 
+
+
+6. Determine the time complexity of the following snippet of code. It is commonly known as a linear search.
+
+FUNCTION linearSearch(array, target)
+ FOR each number in the array
+   IF number = target THEN
+     RETURN true
+   END IF
+ END FOR
+ RETURN false
+END FUNCTION
+
+The time complexity of this function is 0(n).
+
+
+7. Determine the time complexity of the following snippet of code.
+
+FUNCTION foo(array)
+ FOR each number in the array
+   FOR each number in the array
+     print "Hello"
+   END FOR
+ END FOR
+END FUNCTION
+
+The time complexity of this function is 0(1).
+
+
+8. Determine the time complexity of the following snippet of code. It is commonly known as the Fibonacci sequence.
+
+FUNCTION fibonacci(number)
+ IF number < 1 THEN
+   ERROR
+ ELSE IF number = 1 or 2 THEN
+   RETURN 1
+ ELSE
+   CALL fibonacci WITH number - 2 RETURNING twoBack
+   CALL fibonacci WITH number - 1 RETURNING oneBack
+   RETURN twoBack + oneBack
+ END IF
+END FUNCTION
+
+The time complexity of this function is 0(n^2).
+
+
+9. Out of the code snippets you just saw, which is the most time efficient?
+
+I would consider the number 8 to be the most time efficient. 
