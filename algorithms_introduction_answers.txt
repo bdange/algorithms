@@ -1,0 +1,48 @@
+1. Using proper pseudo-code, describe the following primitive algorithms:
+
+- Making coffee:
+
+IF the coffee already has coffee
+	STOP action
+ELSE
+	ADD water to the coffee machine
+	FIND coffee and a filter
+	INSERT the filter inside the recipient
+	ADD coffee inside the filter
+	TURN the machine ON
+	WAIT UNTIL coffee is ready
+ENDIF
+
+
+- Washing dishes: 
+
+WHILE there are still dirty dishes
+	FIND a sponge and dishwashing liquid
+	CLEAN the dishes in a sink
+	LET them dry
+ENDWHILE
+
+
+- A choice of your own: Cook pastas
+
+START by adding water to a pot and turn it on fire
+
+IF water is not boiling THEN
+	WAIT
+ELSE
+	ADD pastas to the pot 10 minutes
+ENDIF 
+
+
+2. As with the knot algorithm, there may be more than one way to solve the problem. It is essential to try to pick the best algorithm for a situation. Name three companies who created an algorithm that made them successful, e.g., Google's search algorithm. It doesn't need to be a tech example (such as a recipe or manufacturing a product). Google's algorithm produces more relevant results than other search engines; what about each of your cases make them stand out?
+
+We can mention Amazon's algorithm suggesting related articles we might be interested in. This is probably one of the reason of its success.
+
+Another one could be Facebook's news feed algorithm selecting what content would be the most interesting based on several factors. This is probably one of the reason why people are so eager to waste their time on it. 
+
+Last one could be Tinder. Their algorithm selects for their users the most appropriate matches by order. This might explain why this app has become a proper phenomenon too. 
+
+
+3. Hypothesize about what constitutes an efficient algorithm versus an inefficient algorithm.
+
+Based on the three previous examples, we can consider an efficient algorithm to be analysing and build-up with the right selection parameters, turning to the best "product delivery" based on people's needs and preferences. 
