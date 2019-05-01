@@ -21,7 +21,7 @@ It is calculated by analysing each statement of that algorithm / function.
 - Linear algorithm
 - Constant algorithm
 - Exponential algorithm
-- Factorial algorithm
+- Factorial algorithm.  
 
 
 5. Choose one of the algorithmic growth rates from the last question and make a comparison to a real-life situation.
