@@ -53,7 +53,7 @@ FUNCTION foo(array)
  END FOR
 END FUNCTION
 
-The time complexity of this function is 0(1).
+The time complexity of this function is O(n^2).
 
 
 8. Determine the time complexity of the following snippet of code. It is commonly known as the Fibonacci sequence.
@@ -70,7 +70,7 @@ FUNCTION fibonacci(number)
  END IF
 END FUNCTION
 
-The time complexity of this function is 0(n).
+The time complexity of this function is O(2^n).   
 
 
 9. Out of the code snippets you just saw, which is the most time efficient?
