@@ -127,18 +127,15 @@ deepCountElements([1,2,[3,4,5],6,[7,8]]);
 
 6. A palindrome is a word or phrase whose spelling is the same either direction (e.g., racecar). Write a recursive algorithm to determine if a given word or phrase is a palindrome.
 
-function palindrome(str) {
- var re = /[^A-Za-z0-9]/g;
- str = str.toLowerCase().replace(re, '');
- var len = str.length;
- for (var i = 0; i < len/2; i++) {
-   if (str[i] !== str[len - 1 - i]) {
-       return false;
-   }
- }
- return true;
+function isPalindrome(word){
+    if (word.length === 0 || word.length === 1)
+    return true;
+    if (word[0] !== word[word.length - 1])
+    return false; 
+    return isPalindrome(word.substr(1, word.length - 2))
 }
-palindrome("A man, a plan, a canal. Panama"); 
+
+console.log(isPalindrome('madam'));
 
 
 7. Google Easter Egg: Google the term "recursion". Google will prompt you with "Did you mean: recursion". Explain why this behavior exhibits properties of recursion.
