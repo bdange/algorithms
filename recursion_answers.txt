@@ -1,0 +1,146 @@
+1. Define and compare recursion and iteration.
+
+Recursion is the process of repeating the same steps / actions until our function is finally performed. 
+On the other hand, iteration is when only a loop repeatedly executes until the controlling condition becomes false. 
+To conclude, recursion is a whole process always applying to a function while the iteration is applied to the set of instructions which we want to get repeatedly executed. 
+
+
+2. Name five algorithms that are commonly implemented by recursion.
+
+2.1. Algorithm for finding the k-th even natural number
+Even(positive integer k) 
+Input: k , a positive integer 
+Output: k-th even natural number (the first even being 0) 
+
+Algorithm: 
+if k = 1, then return 0; 
+else return Even(k-1) + 2 
+
+
+2.2. Algorithm for computing the k-th power of 2 
+
+Power_of_2(natural number k) 
+Input: k , a natural number 
+Output: k-th power of 2 
+
+Algorithm: 
+if k = 0, then return 1; 
+else return 2*Power_of_2(k - 1) . 
+
+
+2.3. Recursive Algorithm for Sequential Search 
+
+Input: L is an array, i and j are positive integers, i   j, and x is the key to be searched for in L. 
+Output: If x is in L between indexes i and j, then output its index, else output 0. 
+
+Algorithm: 
+if i   j , then 
+{ 
+   if L(i) = x, then return i ; 
+   else return SeqSearch(L, i+1, j, x) 
+} 
+else return 0. 
+
+
+2.4. Algorithm for testing whether or not a number x is a natural number 
+
+Natural(a number x) 
+Input: A number x 
+Output: "Yes" if x is a natural number, else "No" 
+
+Algorithm: 
+if x < 0,   then return "No" 
+else 
+    if x = 0,   then return "Yes" 
+    else return Natural( x - 1 ) 
+
+
+2.5. Algorithm for testing whether or not an expression w is a proposition(propositional form) 
+
+Proposition( a string w ) 
+
+Input: A string w 
+Output: "Yes" if w is a proposition, else "No" 
+
+Algorithm: 
+if w is 1(true), 0(false), or a propositional variable, then return "Yes" 
+else if w = ~w1, then return Proposition(w1) 
+   else 
+     if ( w = w1   w2 or w1  w2 or w1  w2 or w1  w2 ) and 
+       Proposition(w1) = Yes and   Proposition(w2) = Yes 
+     then return Yes 
+     else return No 
+end 
+
+
+3. When should you use recursion, and when should you avoid recursion? Give examples for each.
+
+You can basically use both recursive and iterative in both cases. Iterative is my opinion, usually the preferred option. However there are cases where using a recursion would be a better fit. Recursive also offers the advantage of being neater by taking less space. 
+In the case of a factorial calculation, there is no need to loop through numbers like in an iteration. You can simply just repeat the calculation again and again. 
+
+function factorial(n) {
+if (n == 0)
+{
+return 1;
+} else {
+return n * factorial(n-1);
+}
+}
+
+On the other hand, recursion should be avoided when there is a looping, like in the case of a palindrome function.
+
+function palindrome(str) {
+ var re = /[^A-Za-z0-9]/g;
+ str = str.toLowerCase().replace(re, '');
+ var len = str.length;
+ for (var i = 0; i < len/2; i++) {
+   if (str[i] !== str[len - 1 - i]) {
+       return false;
+   }
+ }
+ return true;
+}
+palindrome("A man, a plan, a canal. Panama"); 
+
+
+4. Compare the recursive and iterative solutions to the three algorithms from the checkpoint (factorial, maximum, and fibonacci). What is similar, and what is different?
+
+In all of these solutions, the recursion solution had a smaller code size while the iteration had a larger code size. The iteration was however much more readable and understandable than the recursion.
+The recursion seems obviously slower because it has to repeat itself over and over again, but this is not always a problem for factorial for instance.  
+
+
+5. Given a multi-dimensional collection (such as an array) where the number of dimensions is unknown, write a recursive algorithm to count the number of items in the entire collection.
+
+function deepCountElements(array){
+  var counter = 0;
+  for(var i=0; i<array.length; i++){
+    if(typeof array[i] === "object"){
+      counter += deepCountElements(array[i]);
+    } else {
+      counter++;
+    }
+  } return counter;
+}
+
+deepCountElements([1,2,[3,4,5],6,[7,8]]);
+
+
+6. A palindrome is a word or phrase whose spelling is the same either direction (e.g., racecar). Write a recursive algorithm to determine if a given word or phrase is a palindrome.
+
+function palindrome(str) {
+ var re = /[^A-Za-z0-9]/g;
+ str = str.toLowerCase().replace(re, '');
+ var len = str.length;
+ for (var i = 0; i < len/2; i++) {
+   if (str[i] !== str[len - 1 - i]) {
+       return false;
+   }
+ }
+ return true;
+}
+palindrome("A man, a plan, a canal. Panama"); 
+
+
+7. Google Easter Egg: Google the term "recursion". Google will prompt you with "Did you mean: recursion". Explain why this behavior exhibits properties of recursion.
+
+This is basically a joke explaining how recursion work: if you click on the suggested 'recursion', the same will happen again and again as this is recursion happening. 
