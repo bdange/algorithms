@@ -1,0 +1,69 @@
+1. What is a real-life scenario that uses linear search?
+
+Looking at an attendant name list. 
+
+
+2. What is a real-life scenario that uses binary search?
+
+Looking at a departures time screen in a rail station. 
+
+
+3. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using linear search? 
+
+You need six iterations. 
+
+
+4. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using binary search?
+
+You need three iterations.
+
+
+5. Given an unsorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+
+As nothing is sorted, there is no way we can use a binary search. Therefore I would go for a linear search. 
+
+
+6. Given a sorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+
+I would definitely use a binary search as number too find could be excessively huge, let's 980 001 for instance. With a linear search that would mean the same number of iterations.
+
+
+Programming questions
+
+1. ou and a friend have set a wager to see who can find the word "Albatross" in the dictionary the fastest. Write a program to allow you to win the bet.
+
+let recursiveFunction = function (arr, x, start, end) {
+  if (start > end) return false; 
+  let mid=Math.floor((start + end)/2);
+  if (arr[mid]===x) return true; 
+  if (arr[mid] > x)
+     return recursiveFunction(arr, x, start, mid-1);
+  else
+     return recursiveFunction(arr, x, mid+1, end);
+}
+
+let arr = ["Alabama", "Alambic", "Albatros", "Bravo", "Charlie"];
+let x = "Albatros";
+
+if (recursiveFunction(arr, x, 0, arr.length-1)) 
+    document.write("Element found!<br>"); 
+else document.write("Element not found!<br>"); 
+
+
+
+2. You work at a pet store, and a child has asked you to net the only white-spotted goldfish from the fish tank. Write a program that will help you net the right fish.
+
+var answer = 'not found';
+
+function LinearSearch(A,n,searchQuery) {
+  for (var i = 0; i < n; i++) {
+    if( A[i] === searchQuery) {
+      return 'found';
+    }
+  }
+  return answer
+}
+
+var names = ["Red", "Blue", "Yellow", "White", "Black"]
+
+console.log(LinearSearch(names, names.length, "White"));
