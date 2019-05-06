@@ -1,0 +1,60 @@
+1. Implement a solution for bubble sort.
+
+function sort(values) {
+  var origValues = values.slice();
+  var length = origValues.length - 1;
+  do {
+    var swapped = false;
+    for(var i = 0; i < length; i++) {
+      if (origValues[i] > origValues[i+1]) {
+        var temp = origValues[i];
+        origValues[i] = origValues[i+1];
+        origValues[i+1] = temp;
+        swapped = true;
+      }
+    }
+  }
+  while(swapped === true);
+  return origValues
+}
+
+//console.log(sort(["E", "B", "A", "C", "F", "D"]));
+values = ["E", "B", "A", "C", "F", "D"];
+console.log(sort(values));
+
+
+2. Write pseudocode for quicksort.
+
+FUNCTION quickSort(array)
+FOR i = LAST INDEX of collection to FIRST INDEX of collection 
+SET maxIndex to [I]
+SET pivot to ROUND DOWN ((LAST INDEX of collection - FIRST INDEX of collection) / 2)
+IF array[I] > pivot[I] THEN 
+SET temp to array[I]
+SET array[I] to array[I+1]
+SET array[I+1] to temp
+END IF 
+END FOR 
+END FUNCTION
+
+SPLIT array in two arrays: leftArray and rightArray
+
+CALL FUNCTION bubbleSort(leftArray)
+END FUNCTION
+
+CALL FUNCTION bubbleSort(rightArray)
+END FUNCTION
+
+3. We talked about time complexity in a previous checkpoint, and how to get an idea of the efficiency of an algorithm. After looking at the pseudocode for the above sorting methods, identify why merge sort and quick sort are much more efficient than the others. Walking through each algorithm with a few sample collections may help.
+
+In my opinion they are more efficient because they replicate the principle of a binary search by splitting the process instead of iterating it.  
+
+
+4. All of the sorts addressed in this checkpoint are known as comparison sorts. Research bucket sort and explain how it works. What is the ideal input for bucket sort?
+
+Bucket sort is the distribution of the elements of a given array into an empty array of buckets. This distribution is actually not made in a random way as buckets are group altogether elements sharing a common trait. 
+Let's imagine we're going to sort various numbers between 1 and 100. We could have buckets grouping numbers like:
+-b1: 0-10
+-b2: 11-20
+...
+This is good way to group together elements in an organised way like a folder on our computer group related files. 
